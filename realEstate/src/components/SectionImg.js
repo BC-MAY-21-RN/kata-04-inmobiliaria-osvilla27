@@ -1,16 +1,14 @@
 import React from "react";
 import { View, Text, Image, StyleSheet, } from "react-native";
-import Icon from 'react-native-vector-icons/Ionicons';
+import { IconText } from "./IconText";
 
 export const SectionImg = ({ item }) => {
+    const name="star", size=12, color="#ffbe0b", value=false;
     return (
         <View>
             <Image source={item.img} style={styles.image}/>
-            <View style={styles.containerPositon}> 
-                <View style={styles.containerScore}>
-                    <Icon name="star" size={12} color="#ffbe0b"/>
-                    <Text style={styles.score}>{item.score}</Text>
-                </View>
+            <View style={styles.containerPositon}>
+                <IconText name={name} size={size} color={color} text={item.score} value={value}/>
             </View>
         </View>
     )
@@ -46,4 +44,5 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         color: '#7f5539',
     }
+
 })

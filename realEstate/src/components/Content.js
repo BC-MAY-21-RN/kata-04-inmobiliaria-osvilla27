@@ -2,19 +2,17 @@ import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { SectionImg } from "./SectionImg";
 import Icon from 'react-native-vector-icons/Ionicons';
+import { IconText } from "./IconText";
 //import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export const Content = ({ item }) => {
-
+    const name="location", size=20, color="black", value=true;
     return (
         <View style={styles.containerMain}>   
             <SectionImg item={item}/> 
             <View style={styles.detailsContent}>
                 <Text style={styles.textFirst}>{item.name} </Text>
-                <View style={styles.container}>
-                    <Icon name="location" size={20} color="black"/>
-                    <Text style={styles.textSecond}>{item.location}</Text>
-                </View>
+                <IconText name={name} size={size} color={color} text={item.location} value={value}/>
                 <View style={styles.containerIcons}>               
                     <Icon name="bed-outline" size={20}/>
                     <Text style={styles.textThird}>{item.beds}</Text> 
