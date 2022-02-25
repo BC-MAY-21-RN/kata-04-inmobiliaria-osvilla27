@@ -6,13 +6,13 @@ import { IconText } from "./IconText";
 //import Icon from 'react-native-vector-icons/FontAwesome5';
 
 export const Content = ({ item }) => {
-    const name="location", size=20, color="black", value=true;
+    
     return (
         <View style={styles.containerMain}>   
             <SectionImg item={item}/> 
             <View style={styles.detailsContent}>
                 <Text style={styles.textFirst}>{item.name} </Text>
-                <IconText name={name} size={size} color={color} text={item.location} value={value}/>
+                <IconText name={"location"} size={20} color={"black"} text={item.location} value={true}/>
                 <View style={styles.containerIcons}>               
                     <Icon name="bed-outline" size={20}/>
                     <Text style={styles.textThird}>{item.beds}</Text> 
