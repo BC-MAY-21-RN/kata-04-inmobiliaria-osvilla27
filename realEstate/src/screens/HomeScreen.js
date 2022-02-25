@@ -1,14 +1,22 @@
 import React from 'react';
-import { View, Text, StyleSheet, } from 'react-native';
+import { View, StyleSheet, FlatList, Text } from 'react-native';
 import { Card } from '../components/Card';
-
+import { data } from "../api/data"
 
 
 export const HomeScreen = () => {
+
+    const renderItem = ({ item }) => (
+       <Card item={item}/>
+    );
+
     return (
         <View style={styles.containerHome}>
-            <Text>Hola mundo!</Text>
-            <Card/>
+            <FlatList
+                data={ data }
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+            />
         </View>
     )
 };
